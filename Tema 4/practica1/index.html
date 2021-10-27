@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<<<<<<< HEAD
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 1</title>
+    <script src="../tools.js"></script>
+  </head>
+  <body>
+    <script>
+      palabras = [];
+      for (let index = 0; index < 10; index++) {
+        palabra = prompt("Escribe palabra , vas por la " + index + " de 10");
+        palabras.push(palabra);
+      }
+      document.write(
+        "Visualiza por pantalla todo el contenido del array, separando cada dato en líneas distintas."
+      );
+      document.write("<br>");
+      visualizarArrayPorLineas(palabras); // pinta el array
+      document.write("<br>Añade al array un dato más. (mediante el uso [longitud]<br>");
+      palabras = añadirAlArray(palabras, "ASUS");
+      document.write(palabras);
+      
+      document.write("<br>Añade al array dos datos más mediante utilizando un solo método.<br>"  );
+      palabras.push("Apple", "ACER");
+      document.write(palabras);
+
+      document.write("<br>Añade un dato más al principio del array.<br>");
+      palabras.unshift("Calamar");
+      document.write(palabras);
+
+      document.write("<br>Localiza un cierto dato dentro del array.<br>");
+      document.write("Se encuenta en la posicion -> " + palabras.indexOf("ASUS"));
+
+      document.write("<br>Elimina los últimos tres datos del array.<br>");
+      copiaArray=palabras;
+      var posiciones= copiaArray.length-3;
+      copiaArray.splice(posiciones);
+      document.write(copiaArray);
+
+      document.write("<br>Crea un sub-array llamado array_recortado con los datos del array elementos, comprendidos entre la posición 4 y 8 (ambos inclusive).<br>" );
+      array_recorado = palabras.splice(4,4);
+      document.write(array_recorado);
+      document.write("<br>Crea un nuevo array llamado elementos_MYCLS con los datos del array elementos en mayúsculas.<br>");
+      elementos_MYCL = palabras.map(function (x) {
+        return x.toUpperCase();
+      });
+      document.write(elementos_MYCL);
+
+      //prueba=prompt("Escribe palabra");
+      //document.write(prueba);
+    </script>
+  </body>
+</html>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <script src="../tools.js"></script>
+</head>
+<body> 
+    <script>
+        var palabras=new array();
+        for (let index = 0; index < 10; index++) {
+            palabra.push(prompt("Escribe palabra , vas por la "+ index + "de 10"));
+        }
+
+        document.write(prueba);
+    </script>
+
+</body>
+</html>
+>>>>>>> 62bd424 (añadido Tema4)

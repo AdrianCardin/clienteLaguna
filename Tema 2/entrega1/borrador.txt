@@ -1,0 +1,1 @@
+condición ? expr1 : expr2 

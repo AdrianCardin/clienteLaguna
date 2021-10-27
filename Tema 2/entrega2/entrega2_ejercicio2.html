@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numero = parseInt(prompt ("Escribe un número"));
+
+        var palabra = prompt ("Escribe suma o resta o division o multiplicacion");
+        palabra= palabra.toUpperCase(); 
+        var resultado=0;
+        var visualizacion;
+        switch (palabra) {
+            
+            case "SUMA":
+            alert("Calculando la suma...");
+                for (let i = numero; i >= 1; i--) {
+                    resultado=resultado+i;
+                    if(i!=numero){
+                        visualizacion=visualizacion + " + " + i;
+                    }else{
+                        visualizacion=numero;
+                    }
+                    
+                }
+
+                break;
+            case "RESTA":
+            alert("Calculando la resta...");
+                for (let i = numero; i >= 1; i--) {
+                    resultado=resultado-i;   
+                    if(i!=numero){
+                        visualizacion=visualizacion + " - " + i;
+                    }else{
+                        visualizacion=numero;
+                    }
+                }
+                
+
+                break;
+            case "MULTIPLICACION":
+            alert("Calculando  la multiplicacion...");
+            resultado=1;
+                for (let i = numero; i > 1; i--) {
+                    resultado=resultado*i;
+                    if(i!=numero){
+                        visualizacion=visualizacion + " * " + i;
+                    }else{
+                        visualizacion=numero;
+                    }
+                }
+                
+                break;
+        
+            case "DIVISION":
+            alert("Calculando la división...");
+                resultado=1;
+                for (let i = numero; i > 1; i--) {
+                    resultado=resultado/i;
+                    if(i!=numero){
+                        visualizacion=visualizacion + " / " + i;
+                    }else{
+                        visualizacion=numero;
+                    }    
+                }
+
+                break;
+            }
+            alert("visualizacion : " +visualizacion);
+            alert("Resultado es : " + resultado);
+
+    </script>
+</body>
+</html>

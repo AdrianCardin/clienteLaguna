@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.html"></script>
+    <script>
+        function getDatos() {
+            ejercicio3();
+            document.write("<br>");
+            url();
+            document.write("<br>");
+            protocol();
+            document.write("<br>");
+            nameCode();
+            document.write("<br>");
+            javaEnPagina();
+            document.write("<br>");
+        }
+        function ejercicio3() {
+            document.write("<h3>Ejemplo de ventana nueva</h3>");
+        }
+        function url() {
+            document.write("URL: "+window.location);
+        }
+        function protocol() {
+            protocolo=location.protocol;
+            document.write("Protocolo : "+protocolo);
+        }
+        function nameCode() {
+            codeName=navigator.appCodeNam;
+            document.write("CodeName : "+codeName);
+        }
+        function javaEnPagina() {
+           if (navigator.javaEnabled()) {
+            document.write("<p>Java SI disponible en esta ventana</p>");
+           }else{
+            document.write("<p>Java NO disponible en esta ventana</p>");
+           }
+        }
+    </script>
+    <title>Redirigimiento</title>
+</head>
+<body>
+    <script>
+        getDatos();
+    </script>
+    
+</body>
+</html>

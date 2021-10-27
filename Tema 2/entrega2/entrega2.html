@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--- metodo burbuja -->
+    <script>
+        var mayor= prompt ("Escribe un número");
+        var mediano= prompt ("Escribe un número");
+        var pequeño= prompt ("Escribe un número");
+
+        var auxiliar;
+
+        //while (mayor < mediano && mediano < pequeño) {
+        
+            for (let i = 0; i <= 2; i++) {
+                alert("pasada " +i);
+                if(pequeño >= mediano){
+                    auxiliar=mediano;
+                    mediano=pequeño;
+                    pequeño=auxiliar;
+                    alert ("Primer if");
+                }
+                if(mediano>= mayor){
+                    auxiliar=mayor;
+                    mayor=mediano;
+                    mediano=auxiliar;
+                    alert ("segundo if");
+                }
+            }
+        
+          alert("El orden de mayor a menor es el siguiente");
+          alert(mayor + " " +mediano+" "+pequeño );
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mayor= parseInt(prompt ("Escribe un número")); 
+        var mediano= parseInt(prompt ("Escribe un número"));
+        var pequeño= parseInt(prompt ("Escribe un número"));
+
+        var auxiliar;
+        var boolean=true;
+    if ((!isNaN(mayor) && mayor!=null && mayor!="")&&(!isNaN(mediano) && mediano!=null && mediano!="")&&(!isNaN(pequeño) && pequeño!=null && pequeño!="")) {
+        
+          for (let i = 0; i <= 2; i++) {
+        
+              if(pequeño >= mediano){
+                  auxiliar=mediano;
+                  mediano=pequeño;
+                  pequeño=auxiliar;
+              }
+              if(mediano>= mayor){
+                  auxiliar=mayor;
+                  mayor=mediano;
+                  mediano=auxiliar;
+              }
+          }  
+        }else{
+            alert("No has escrito bien los numeros");
+            boolean=false;
+        }
+        
+        if(boolean){
+            alert("El orden de mayor a menor es el siguiente");
+            alert(mayor + " " +mediano+" "+pequeño );
+
+        }
+
+        
+
+    </script>
+</body>
+</html>

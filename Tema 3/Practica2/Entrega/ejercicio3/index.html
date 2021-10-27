@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../tools.js"></script>
+    <title>Practica 2</title>
+</head>
+<body>
+    <button type="button" onclick="abrirPaginaBloqueada('./redirigimiento.html')" >Abrir</button>
+    <div id="datos">Aqui se escribirá los datos</div>
+    <script>
+        
+        nombre=prompt("Escriba el nombre");
+        dia=prompt("Escriba el dia de nacimiento");
+        mes=prompt("Escriba el mes de nacimiento");
+        anno=prompt("Escriba el año de nacimiento");
+        esteAño=new Date();
+        esteAño=(esteAño.getYear()+1900)-anno;
+
+        document.getElementById("datos").innerHTML="Buenos dias "+ nombre;
+        document.getElementById("datos").innerHTML+="<br>Tu nombre tiene "+ nombre.length +" caracteres";
+        document.getElementById("datos").innerHTML+="<br>La primera letra A de tu nombre está en la posición: "+ nombre.toUpperCase().indexOf("A");
+        document.getElementById("datos").innerHTML+="<br>La primera letra A de tu nombre está en la posición: "+ nombre.toUpperCase().lastIndexOf("A");
+        document.getElementById("datos").innerHTML+="<br>Tu nombre menos las 3 primeras letras es: "+nombre.slice(3);
+        document.getElementById("datos").innerHTML+="<br>Tu nombre en mayusculas es : "+ nombre.toUpperCase();
+        document.getElementById("datos").innerHTML+="<br>Tu edad es : "+ esteAño +" años";
+        document.getElementById("datos").innerHTML+="<br>Naciste el dia "+ dia +" y en el mes "+mes;
+        document.getElementById("datos").innerHTML+="<br> Coseno de 180 : "+Math.cos(180);
+        document.getElementById("datos").innerHTML+="<br>El número mayor de (34,67,23,75,35,19) es: "+ Math.max(34,67,23,75,35,19);
+        document.getElementById("datos").innerHTML+="<br>Numero random "+Math.random();
+
+
+        
+    </script>
+</body>
+</html>

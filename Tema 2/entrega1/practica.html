@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Declaro variables
+      var numero = 3;
+      var divisores = 0;
+
+      // ponemos la condición como resticción para que el numero sea mayor que 0
+      if (numero > 0) {
+        for (let i = 2; i < numero; i++) {
+          if (numero % i == 0) {
+            divisores++;
+            // si supera mas de 2 divisores corta el proceso de inmediato y sale automaticamente
+            if (divisores == 1) {
+              break;
+            }
+          }
+        }
+        // valido si tiene mas de dos divisores es primo , si no , no es primo
+        if (divisores == 2) {
+          alert("El numero " + numero + " es primo");
+        } else {
+          alert("El numero " + numero + " no es primo");
+        }
+      } else {
+        alert("El numero debe ser mayor de 0");
+      }
+    </script>
+  </body>
+</html>
