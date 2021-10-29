@@ -1,27 +1,16 @@
 function visualizarArrayPorLineas(array) {
   document.write("Estos son los numeros");
-<<<<<<< HEAD
-  document.write("<br>");
-  for (let index = 0; index < array.length; index++) {
-    document.write(array[index]);
-    document.write("<br>");
-  }
-}
-
-function añadirAlArray(array, palabra) {
-  array[array.length] = palabra;
-  return array;
-}
-
-=======
   for (let index = 0; index < array.length; index++) {
     document.write(array[index]);
     document.write("<br>");
     
   }
 }
+function añadirAlArray(array, palabra) {
+  array[array.length] = palabra;
+  return array;
+}
 
->>>>>>> 62bd424 (añadido Tema4)
 function abrirVentanaHija() {
   ancho = parseInt(window.screen.width / 2);
   alto = parseInt(window.screen.height / 2);
@@ -52,19 +41,10 @@ function abrirPaginaBloqueada(src) {
   );
 }
 function sendToHija() {
-<<<<<<< HEAD
-  ventanaHija.document.getElementById("mensajeRecibidoPadre").value =
-    document.getElementById("mensajeEnviadoPadre").value;
-}
-function sendToPadre() {
-  opener.document.getElementById("mensajeRecibidoHija").value =
-    document.getElementById("mensajeEnviadoHija").value;
-=======
   ventanaHija.document.getElementById("mensajeRecibidoPadre").value = document.getElementById("mensajeEnviadoPadre").value;
 }
 function sendToPadre() {
   opener.document.getElementById("mensajeRecibidoHija").value = document.getElementById("mensajeEnviadoHija").value;
->>>>>>> 62bd424 (añadido Tema4)
 }
 function haciaDelante() {
   window.history.forward();
