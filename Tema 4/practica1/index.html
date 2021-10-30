@@ -23,27 +23,27 @@
       palabras = añadirAlArray(palabras, "ASUS");
       document.write(palabras);
       
-      document.write("<br>Añade al array dos datos más mediante utilizando un solo método.<br>"  );
+      document.write("<br><br>Añade al array dos datos más mediante utilizando un solo método.<br>"  );
       palabras.push("Apple", "ACER");
       document.write(palabras);
 
-      document.write("<br>Añade un dato más al principio del array.<br>");
+      document.write("<br><br>Añade un dato más al principio del array.<br>");
       palabras.unshift("Calamar");
       document.write(palabras);
 
-      document.write("<br>Localiza un cierto dato dentro del array.<br>");
+      document.write("<br><br>Localiza un cierto dato dentro del array.<br>");
       document.write("Se encuenta en la posicion -> " + palabras.indexOf("ASUS"));
 
-      document.write("<br>Elimina los últimos tres datos del array.<br>");
+      document.write("<br><br>Elimina los últimos tres datos del array.<br>");
       copiaArray=palabras;
       var posiciones= copiaArray.length-3;
       copiaArray.splice(posiciones);
       document.write(copiaArray);
 
-      document.write("<br>Crea un sub-array llamado array_recortado con los datos del array elementos, comprendidos entre la posición 4 y 8 (ambos inclusive).<br>" );
+      document.write("<br><br>Crea un sub-array llamado array_recortado con los datos del array elementos, comprendidos entre la posición 4 y 8 (ambos inclusive).<br>" );
       array_recorado = palabras.splice(4,4);
       document.write(array_recorado);
-      document.write("<br>Crea un nuevo array llamado elementos_MYCLS con los datos del array elementos en mayúsculas.<br>");
+      document.write("<br><br>Crea un nuevo array llamado elementos_MYCLS con los datos del array elementos en mayúsculas.<br>");
       elementos_MYCL = palabras.map(function (x) {
         return x.toUpperCase();
       });

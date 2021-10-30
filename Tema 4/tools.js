@@ -1,5 +1,5 @@
 function visualizarArrayPorLineas(array) {
-  document.write("Estos son los numeros");
+  document.write("Estos son tus palabras<br>");
   for (let index = 0; index < array.length; index++) {
     document.write(array[index]);
     document.write("<br>");
