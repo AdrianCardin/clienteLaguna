@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function buscarDelegado(votos) {
+        //devuelve la posicion de la persona mas votada
+        numeroMasVotos = Math.max.apply(null, votos);
+        indexDelegado = votos.indexOf(numeroMasVotos);
+        return indexDelegado;
+      }
+    </script>
+    <title>Votos delegado</title>
+  </head>
+  <body>
+    <script>
+      var personas = ["Adrian", "Camila", "Ernesto", "David", "Elsech"];
+      var votos = [];
+      lenghtPersonas = personas.length;
+
+      for (let index = 0; index < lenghtPersonas; index++) {
+        var votosParaDelegado = parseInt(
+          prompt("Cuantos votos para " + personas[index])
+        );
+        votos[index] = votosParaDelegado;
+      }
+
+      indexDelegado = buscarDelegado(votos);
+      document.write(
+        "El delegado es " +
+          personas[indexDelegado] +
+          " con " +
+          votos[indexDelegado] +
+          " votos"
+      );
+    </script>
+  </body>
+</html>
