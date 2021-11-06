@@ -72,11 +72,11 @@
           zonaResultados.innerHTML = " " ;
           for (let index = 0; index < datos.length; index++) {  
             //pitamos los resultados
-            zonaResultados.innerHTML += datos[index] +" "+votos[index] +"<br>" ;
+            zonaResultados.innerHTML += datos[index] +" "+votos[index]+" voto/s" +"<br>" ;
           }
     
           indexDelegado = buscarDelegado(votos);
-          zonaDatos.innerHTML="El delegado es " + datos[indexDelegado] + " con " +votos[indexDelegado] +" votos";
+          zonaDatos.innerHTML="El delegado es " + datos[indexDelegado] + " con " +votos[indexDelegado] +" voto/s";
           console.log();
         }
 
