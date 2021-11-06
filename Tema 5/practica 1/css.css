@@ -1,0 +1,63 @@
+*{
+    background-color: grey;
+}
+#zonaDatos{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0%);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
+    align-content: center;
+}
+#zonaResultados{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0%);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
+    align-content: center;
+}
+h2{
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0%);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
+    align-content: center;
+}
+#files{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0%);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#zonaCandidatos{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(0,0%);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
+    align-content: center;
+}
