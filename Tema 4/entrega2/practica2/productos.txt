@@ -1,0 +1,3 @@
+zapatillas;40
+chaqueta;100
+pantalon;20

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="objeto.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="centrado">
+        <form name="formulario">
+            <p>Escoja su fichero txt</p>
+            <input type="file" name="archivos" id="archivos"/>
+        </form>
+    </div>
+
+    <h2>Aqui salen los productos</h2>
+    <div id="zonaDatos">
+      <p>No hay datos</p>
+    </div>
+    <script>
+        function comenzar() {
+        zonaDatos = document.getElementById("zonaDatos");
+        archivos = document.getElementById("archivos");
+        archivos.addEventListener("change", procesar, false);
+        }
+
+      function procesar(e) {
+        var datos=new Array(); //creamos un array
+        var archivos = e.target.files; //obtiene el archivo en forma de array
+        var mi_archivo = archivos[0];
+        var lector = new FileReader(); // se crea un lector
+        lector.readAsText(mi_archivo); // devuelve la informacion del archivo en modo txt
+        lector.addEventListener("load", mostrar_en_web, false);
+      }
+
+      function mostrar_en_web(e) {
+
+        var arrayObjetos=[];
+        var resultado = e.target.result;
+        datos=resultado.split('\n');
+        var datosParaObjeto=[];
+        for (let i = 0; i < datos.length ; i++) {
+            //guardamos los datos que queremos meter en los objetos
+           datosParaObjeto.push(datos[i].split(';'));
+
+           for (let j = 0; j < 1 ; j++) {
+               // creamos el objeto y lo metemos en el array de objetos
+               let producto=new Producto(datosParaObjeto[i][j],datosParaObjeto[i][j+1]); 
+               arrayObjetos.push(producto);           
+           }
+        }
+        //dejamos el div vacio para escribirlo
+        zonaDatos.innerHTML="<select name='productos' id='select'>";
+        // obtengo el id del select
+        option=document.getElementById("select");  
+        for (let i = 0; i <arrayObjetos.length; i++) {
+            //escribimos en el div los objetos del array
+            option.innerHTML +="<option>"+ arrayObjetos[i].nombre +"</option>";
+        }
+        zonaDatos.innerHTML+="</select>";
+      }
+
+      window.addEventListener("load", comenzar, false);
+    </script>
+    <option value=""></option>
+</body>
+</html>

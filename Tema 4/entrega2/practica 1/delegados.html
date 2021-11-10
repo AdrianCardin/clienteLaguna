@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css">
+    <script>
+      function buscarDelegado(votos) {
+        //devuelve la posicion de la persona mas votada
+        numeroMasVotos = Math.max.apply(null, votos);
+        indexDelegado = votos.indexOf(numeroMasVotos);
+        return indexDelegado;
+      }
+    </script>
+    <title>Votos delegado</title>
+  </head>
+  <body>
+    <div id="files">
+      <p>Busca los candidatos</p>
+      <input type="file" name="archivos" id="archivos">  
+    </div>
+    <h2>Aqui estan los candidatos</h2>
+    <div id="zonaCandidatos">
+      Aqui van los candidatos
+    </div>
+    <h2>Resultado</h2>
+    <div id="zonaResultados">
+      aqui saldrá el resultado de las votaciones
+    </div>
+    <h2>Delegado</h2>
+    <div id="zonaDatos">
+      aqui saldrá el delegado
+    </div>
+      <script>
+        function comenzar() {
+          zonaResultados=document.getElementById("zonaResultados");
+          zonaCandidatos = document.getElementById("zonaCandidatos");
+          zonaDatos= document.getElementById("zonaDatos");
+          archivos = document.getElementById("archivos");
+          archivos.addEventListener("change", procesar, false);
+        }
+
+        function procesar(e) {
+          var datos = new Array(); //creamos un array
+          var archivos = e.target.files; //obtiene el archivo en forma de array
+          var mi_archivo = archivos[0];
+          var lector = new FileReader(); // se crea un lector
+          lector.readAsText(mi_archivo); // devuelve la informacion del archivo en modo txt
+          lector.addEventListener("load", mostrar_en_web, false);
+        }
+
+        function mostrar_en_web(e) {
+          var resultado = e.target.result;
+          datos = resultado.split(",");
+          console.log("Resultado" + resultado);
+          console.log("Datos split" + datos);
+          zonaCandidatos.innerHTML ="" ;
+          for (let index = 0; index < datos.length; index++) {  
+            //pitamos los candidatos
+            zonaCandidatos.innerHTML += datos[index] + "<br>" ;
+          }
+          var votos = [];
+          lenghtPersonas = datos.length;
+          console.log(datos);
+          for (let index = 0; index < lenghtPersonas; index++) {
+            var votosParaDelegado = parseInt(
+              prompt("Cuantos votos para " + datos[index])
+            );
+            votos[index] = votosParaDelegado;
+          }
+          zonaResultados.innerHTML = " " ;
+          for (let index = 0; index < datos.length; index++) {  
+            //pitamos los resultados
+            zonaResultados.innerHTML += datos[index] +" "+votos[index]+" voto/s" +"<br>" ;
+          }
+    
+          indexDelegado = buscarDelegado(votos);
+          zonaDatos.innerHTML="El delegado es " + datos[indexDelegado] + " con " +votos[indexDelegado] +" voto/s";
+          console.log();
+        }
+
+        window.addEventListener("load", comenzar, false);
+      </script>
+    </body>
+</html>
