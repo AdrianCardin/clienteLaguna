@@ -90,3 +90,13 @@ function javaEnPagina() {
     document.write("<p>Java NO disponible en esta ventana</p>");
   }
 }
+function getPrecio(){
+  var select = document.getElementById('select');
+  select.addEventListener('cambiar',
+  function () {
+    var opcion= this.options(select.selectedIndex);
+    var producto = new Producto(opcion.nombre,opcion.precio);
+    document.getElementById("precio").innerText=producto.precio.toString();
+  }
+  )
+}

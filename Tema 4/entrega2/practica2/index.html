@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="objeto.js"></script>
+    <script src="../../tools.js"></script>
     <link rel="stylesheet" href="css.css">
     <title>Document</title>
 </head>
@@ -20,6 +21,9 @@
     <div id="zonaDatos">
       <p>No hay datos</p>
     </div>
+    <div id="precio">
+        <p>precio</p>
+      </div>
     <script>
         function comenzar() {
         zonaDatos = document.getElementById("zonaDatos");
@@ -58,7 +62,7 @@
         option=document.getElementById("select");  
         for (let i = 0; i <arrayObjetos.length; i++) {
             //escribimos en el div los objetos del array
-            option.innerHTML +="<option>"+ arrayObjetos[i].nombre +"</option>";
+            option.innerHTML +="<option onclick='getPrecio()''>"+ arrayObjetos[i].nombre +"</option>";
         }
         zonaDatos.innerHTML+="</select>";
       }

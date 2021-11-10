@@ -20,3 +20,11 @@
 h2{
     text-align: center;
 }
+#precio{
+    position: relative;
+    text-align: center;
+    width: 30%;
+    margin-top: 1%;
+    margin: auto;
+    border: 2px solid rgb(6, 255, 18);
+}
