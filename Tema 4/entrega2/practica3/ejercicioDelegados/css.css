@@ -1,0 +1,36 @@
+*{
+    top: 0;
+    left: 0;
+}
+.centrado{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 30%;
+    border: 2px solid rgb(255, 0, 0);
+}
+#zonaDatos{
+    position: relative;
+    text-align: center;
+    width: 30%;
+    margin-top: 1%;
+    margin: auto;
+    border: 2px solid rgb(25, 0, 255);
+}
+
+#votaciones{
+    position: relative;
+    text-align: center;
+    width: 30%;
+    margin-top: 1%;
+    margin: auto;
+    border: 2px solid rgb(153, 0, 255);
+}
+#resultado{
+    position: relative;
+    text-align: center;
+    width: 30%;
+    margin-top: 1%;
+    margin: auto;
+    border: 2px solid rgb(255, 0, 119);
+}

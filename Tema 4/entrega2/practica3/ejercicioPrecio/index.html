@@ -30,7 +30,7 @@
 
         function getProducto() {
           let precio=document.getElementById("precio");
-          let indice=document.getElementById("select").selectedIndex;
+          let indice=document.getElementById("select").selectedIndex; // obtienes el indice del seleccionado  ||||| CLAVE !!!!!
           let PrecioProducto=arrayObjetos[indice].precio;
           precio.innerHTML=PrecioProducto;
         }
@@ -71,16 +71,13 @@
         option=document.getElementById("select");  
         for (let i = 0; i <arrayObjetos.length; i++) {
             //escribimos en el div los objetos del array
-            option.innerHTML +="<option onclick='getPrecio()'>"+ arrayObjetos[i].nombre +"</option>";
+            option.innerHTML +="<option>"+ arrayObjetos[i].nombre +"</option>";
         }
         zonaDatos.innerHTML+="</select>";
         zonaDatos.innerHTML+="<input type='button' onclick='getProducto()' value='Enviar'>";
-        console.log(datosParaObjeto);
       }
 
       window.addEventListener("load", comenzar, false);
     </script>
-    
-    <option value=""></option>
 </body>
 </html>

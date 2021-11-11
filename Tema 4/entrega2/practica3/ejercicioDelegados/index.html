@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css" />
+    <script src="objetoAlumno.js"></script>
+    <title>Ejercicio 2 Tema 4</title>
+  </head>
+  <body>
+    <div class="centrado">
+        <form name="formulario">
+            <p>Escoja su fichero txt</p>
+            <input type="file" name="archivos" id="archivos"/>
+        </form>
+    </div>
+    <div id="zonaDatos">
+      <p>No hay datos</p>
+    </div>
+
+    <div id="votaciones">
+      <p>Aqui aparece las votaciones</p>
+    </div>
+
+    <div id="resultado">
+      <p>Aqui aparece El resultado</p>
+    </div>
+
+    <script>
+      arrayObjetosAlumnos=[];
+      let resultado=document.getElementById("resultado");
+      contadorVotos=0;
+
+      function pintarVotaciones() {
+        resultado.innerHTML="";
+        for (let i = 0; i < arrayObjetosAlumnos.length; i++) {
+          resultado.innerHTML+= arrayObjetosAlumnos[i].nombre +" "+ arrayObjetosAlumnos[i].votos + " votos <br>";
+        }
+      }
+
+        function votar() {
+          let precio=document.getElementById("zonaDatos");
+          let indiceDelalumno=document.getElementById("select").selectedIndex; // obtienes el indice del seleccionado  ||||| CLAVE !!!!!
+          arrayObjetosAlumnos[indiceDelalumno].votos=arrayObjetosAlumnos[indiceDelalumno].votos+1; // añadimos un voto
+          debugger;
+          pintarVotaciones();
+        }
+
+      function comenzar() {
+        votaciones=document.getElementById("votaciones");
+        zonaDatos = document.getElementById("zonaDatos");
+        archivos = document.getElementById("archivos");
+        archivos.addEventListener("change", procesar, false);
+      }
+
+      function procesar(e) {
+        var datos=new Array(); //creamos un array
+        var archivos = e.target.files; //obtiene el archivo en forma de array
+        var mi_archivo = archivos[0];
+        var lector = new FileReader(); // se crea un lector
+        lector.readAsText(mi_archivo); // devuelve la informacion del archivo en modo txt
+        lector.addEventListener("load", mostrar_en_web, false);
+      }
+
+      function mostrar_en_web(e) {
+        var resultado = e.target.result;
+        alumnos=resultado.split(",");
+        
+
+        //hacemos los objetos alumnos
+        for (let i = 0; i < alumnos.length; i++) {
+          // creas el objeto alumno
+          var alumno= new Alumno(alumnos[i],0);
+
+          // lo añades en el array de objetos
+          arrayObjetosAlumnos.push(alumno); 
+        }
+        
+        
+        // pintamos a los alumnos 
+        zonaDatos.innerHTML="";
+        for (let i = 0; i < arrayObjetosAlumnos.length; i++) {
+          zonaDatos.innerHTML+= arrayObjetosAlumnos[i].nombre +" <br>";
+        }
+
+
+        //hay  limitar las veces que se puede votar
+        
+        // pasamos a las votaciones
+        votaciones.innerHTML = "Vota a un alumno <br>";
+        votaciones.innerHTML += "<select name='alumnos' id='select'>";
+        // obtengo el id del select
+        option=document.getElementById("select");  
+        for (let j = 0; j <arrayObjetosAlumnos.length; j++) {
+            //escrjbimos en el div los objetos del array
+            option.innerHTML +="<option>"+ arrayObjetosAlumnos[j].nombre +"</option>";
+        }
+        votaciones.innerHTML+="</select>";
+        votaciones.innerHTML+="<input type='button' onclick='votar()' value='Enviar'>";
+        
+      
+    }
+   
+
+      window.addEventListener("load", comenzar, false);
+    </script>
+  </body>
+</html>
