@@ -33,17 +33,50 @@
       contadorVotos=0;
 
       function pintarVotaciones() {
+
         resultado.innerHTML="";
         for (let i = 0; i < arrayObjetosAlumnos.length; i++) {
           resultado.innerHTML+= arrayObjetosAlumnos[i].nombre +" "+ arrayObjetosAlumnos[i].votos + " votos <br>";
         }
+        debugger;
+        if (contadorVotos<arrayObjetosAlumnos.length) {
+          contadorVotos++;
+        votaciones.innerHTML = "Vota "+ arrayObjetosAlumnos[contadorVotos].nombre +"<br>";
+        votaciones.innerHTML += "<select name='alumnos' id='select'>";
+        // obtengo el id del select
+        option=document.getElementById("select");  
+        for (let j = 0; j <arrayObjetosAlumnos.length; j++) {
+            //escrjbimos en el div los objetos del array
+            option.innerHTML +="<option>"+ arrayObjetosAlumnos[j].nombre +"</option>";
+        }
+        votaciones.innerHTML+="</select>";
+        votaciones.innerHTML+="<input type='button' onclick='votar()' value='Enviar'>";
+        
+      }else{
+        // obtenemos el numero mayor de votos
+        let numeroMayor=0;
+        let indiceMayor=0;
+        for (let i = 0; i < arrayObjetosAlumnos.length; i++) {
+          if (arrayObjetosAlumnos[i].votos>numeroMayor) {
+            numeroMayor=arrayObjetosAlumnos[i].votos;
+            indiceMayor=i;
+          }
+
+          
+        }
+
+        resultado.innerHTML = "<p>El delegad@ es "+ arrayObjetosAlumnos[indiceMayor].nombre +" con "+ numeroMayor +" votos</p>";
+        
+      }
+
       }
 
         function votar() {
+          
+          debugger;
           let precio=document.getElementById("zonaDatos");
           let indiceDelalumno=document.getElementById("select").selectedIndex; // obtienes el indice del seleccionado  ||||| CLAVE !!!!!
           arrayObjetosAlumnos[indiceDelalumno].votos=arrayObjetosAlumnos[indiceDelalumno].votos+1; // añadimos un voto
-          debugger;
           pintarVotaciones();
         }
 
@@ -84,26 +117,17 @@
           zonaDatos.innerHTML+= arrayObjetosAlumnos[i].nombre +" <br>";
         }
 
-
-        //hay  limitar las veces que se puede votar
         
-        // pasamos a las votaciones
-        votaciones.innerHTML = "Vota a un alumno <br>";
-        votaciones.innerHTML += "<select name='alumnos' id='select'>";
-        // obtengo el id del select
-        option=document.getElementById("select");  
-        for (let j = 0; j <arrayObjetosAlumnos.length; j++) {
-            //escrjbimos en el div los objetos del array
-            option.innerHTML +="<option>"+ arrayObjetosAlumnos[j].nombre +"</option>";
-        }
-        votaciones.innerHTML+="</select>";
-        votaciones.innerHTML+="<input type='button' onclick='votar()' value='Enviar'>";
+        pintarVotaciones();
+        
+      }
         
       
-    }
+    
    
 
       window.addEventListener("load", comenzar, false);
     </script>
+    
   </body>
 </html>
