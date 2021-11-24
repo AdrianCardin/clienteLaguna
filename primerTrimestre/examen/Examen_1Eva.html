@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Visor de Entrenamiento:</title>
+    <script type="text/javascript" src="examen_1eva.js"; ></script>
+</head>
+
+<body onload="iniciar()">
+<H1><strong>Visor de Entrenamientos. Cálculo del VO2Máx.</strong></H1>
+
+    <pre id="contenido-archivo"></pre>
+    <label class="custom-file-upload" for="file-input">Fichero Entrenamientos</label>
+    <input class="button" type="file" id="file-input" value="Fichero alumnos">
+  
+    <table border="0" style="width: 100%; border-collapse: collapse; border-style: none;">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <p>Distancia:</p>
+                    <p><input id="distancia" name="distancia" type="text" value="distancia" /></p>
+                </td>
+                <td style="width: 50%;">
+                    <p>Potencia (5 min.) :</p>
+                    <p><input id="potencia" name="potencia" type="text" value="potencia" /></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">
+                    <p>Duraci&oacute;n:</p>
+                    <p><input id="duracion" name="duracion" type="text" value="duración" /></p>
+                </td>
+                <td style="width: 50%;">
+                    <p>VO2Max (Volumen Máximo de Oxigeno)<br> Formula=(10.8 * potencia / PESO )+ 7 :</p>
+                    <p><input id="ftp" name="ftp" type="text" value="VO2MAX" /></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p></p>
+    <button id="siguiente" onclick="cargar_datos_input()">
+        <span id="siguiente" class="submit">Siguiente</span>
+    </button>
+ 
+    <p></p>
+</body>
+</html>
