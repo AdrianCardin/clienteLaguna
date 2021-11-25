@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 5</title>
+</head>
+<body>
+    <form name="formulario">
+        <label>Fecha</label>
+        <input type="date" name="fecha">
+        <br>
+        <label>Rango</label>
+        <input type="range" id="rango">
+        <br>
+        <label>Telefono</label>
+        <input type="tel" id="telefono">
+        <br>
+        <label>Color</label>
+        <input type="color" id="color">
+        <br>
+        <input type="button" value="Enviar" onclick="pintar()">
+    </form>
+    <br>
+    <br>
+    <p id="pintar">Aqui se pinta las respuestas</p>
+</body>
+    <script>
+
+        function pintar() {
+            array=[];
+            arrayNombres=["fecha", "rango" , "telefono","color"];
+            array.push(fecha=document.formulario.fecha.value);
+            array.push(rango=document.formulario.rango.value);
+            array.push(telefono=document.formulario.telefono.value);
+            array.push(color=document.formulario.color.value);
+
+            var pintar=document.getElementById("pintar");
+            pintar.innerHTML="";
+            debugger;
+            for (let i = 0; i < array.length; i++) {
+            pintar.innerHTML +=arrayNombres[i] + " -> "+ array[i] + '</br>';
+                
+            }
+        }
+
+    </script>
+
+</html>
