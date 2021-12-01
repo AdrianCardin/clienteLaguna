@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 5</title>
+</head>
+<body>
+    <form name="formulario">
+      
+        <label >Elige la comida</label>
+        <select name="comida" id="">
+            <option value="pizza">pizza</option>
+            <option value="fabada">fabada</option>
+            <option value="costillar">costillar</option>
+            <option value="manzana">manzana</option>
+        </select>
+        <br>
+
+        <label>Elige un navegador de la lista:</label>
+        <input list="navegador" name="navegador">
+        <datalist id="navegador">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Internet Explorer"></option>
+            <option value="Opera"></option>
+            <option value="Safari"></option>
+            <option value="Microsoft Edge"></option>
+          </datalist>
+        <br>
+
+
+        <label >Escoge coche</label>
+        <select name="coche">
+            <optgroup label="Ferrari">
+        
+              <option>458 Spider</option>
+        
+              <option>F12 Berlinetta</option>
+        
+              <option>California T</option>
+        
+            </optgroup>
+        
+            <optgroup label="Porsche">
+        
+              <option>Macan</option>
+        
+              <option>918 Spyder</option>
+        
+            </optgroup>
+        
+          </select>
+        <br>
+        <input type="button" value="Enviar" onclick="pintar()">
+    </form>
+    <br>
+    <br>
+    <p id="pintar">Aqui se pinta las respuestas</p>
+</body>
+    <script>
+
+        function pintar() {
+            array=[];
+            arrayNombres=["comida", "navegador" , "coche"];
+            array.push(comida=document.formulario.comida.value);
+            array.push(navegador=document.formulario.navegador.value);
+            array.push(coche=document.formulario.coche.value);
+
+            var pintar=document.getElementById("pintar");
+            pintar.innerHTML="";
+            debugger;
+            for (let i = 0; i < array.length; i++) {
+            pintar.innerHTML +=arrayNombres[i] + " -> "+ array[i] + '</br>';
+                
+            }
+        }
+
+    </script>
+
+</html>

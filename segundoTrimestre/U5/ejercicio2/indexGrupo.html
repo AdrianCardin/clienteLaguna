@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 5</title>
+</head>
+<body>
+    <form name="formulario" id="formulario">
+
+        <label >Escoge coche</label>
+        <select name="cocheUno" id="cocheUno" onchange="desabilitar()">
+          
+            <option value=""></option>
+            <option value="Ferrari">Ferrari</option>
+        
+            <option value="Porsche">Porsche</option>
+        
+          </select>
+        <br>
+        <label >Escoge coche</label>
+        <select name="cocheDos">
+            <optgroup id="Ferrari" label="Ferrari">
+        
+              <option>458 Spider</option>
+        
+              <option>F12 Berlinetta</option>
+        
+              <option>California T</option>
+        
+            </optgroup>
+        
+            <optgroup id="Porche" label="Porche">
+        
+              <option>Macan</option>
+        
+              <option>918 Spyder</option>
+        
+            </optgroup>
+        
+          </select>
+          <br>
+          <br>
+        
+    </form>
+    <br>
+    <br>
+    <p id="pintar">Aqui se pinta las respuestas</p>
+</body>
+    <script>
+
+        function desabilitar() {
+            
+            IndiceMarcaCoche=document.formulario.cocheUno.selectedIndex;
+            MarcaCoche=document.formulario.cocheUno.options[IndiceMarcaCoche].value;
+
+            disabled=document.formulario.cocheDos;
+            
+            debugger;
+            for (let i = 0; i < array.length; i++) {
+            pintar.innerHTML +=arrayNombres[i] + " -> "+ array[i] + '</br>';
+                
+            }
+        }
+
+    </script>
+
+</html>
