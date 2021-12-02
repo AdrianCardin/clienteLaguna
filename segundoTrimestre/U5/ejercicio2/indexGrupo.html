@@ -9,7 +9,7 @@
 <body>
     <form name="formulario" id="formulario">
 
-        <label >Escoge coche</label>
+        <label >Deshabilitar marca</label>
         <select name="cocheUno" id="cocheUno" onchange="desabilitar()">
           
             <option value=""></option>
@@ -31,7 +31,7 @@
         
             </optgroup>
         
-            <optgroup id="Porche" label="Porche">
+            <optgroup id="Porsche" label="Porche">
         
               <option>Macan</option>
         
@@ -44,18 +44,17 @@
           <br>
         
     </form>
-    <br>
-    <br>
-    <p id="pintar">Aqui se pinta las respuestas</p>
 </body>
     <script>
 
         function desabilitar() {
-            
+          document.getElementById("Ferrari").disabled = false;
+          document.getElementById("Porsche").disabled = false;  
+
             IndiceMarcaCoche=document.formulario.cocheUno.selectedIndex;
             MarcaCoche=document.formulario.cocheUno.options[IndiceMarcaCoche].value;
 
-            disabled=document.formulario.cocheDos;
+            document.getElementById(MarcaCoche).disabled = true;
             
             debugger;
             for (let i = 0; i < array.length; i++) {
