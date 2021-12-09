@@ -34,5 +34,5 @@ function desabilitar() {
       }
   }
 
-  document.formulario.enviar.addEventListener("click", pintar, false);
+  document.formulario.addEventListener("change", pintar, false);
   document.getElementById("cocheUno").addEventListener("change", desabilitar, false);
