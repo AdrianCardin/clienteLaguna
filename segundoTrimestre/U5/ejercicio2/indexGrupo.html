@@ -1,92 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unidad 5</title>
-</head>
-<body>
+  </head>
+  <body>
     <form name="formulario" id="formulario">
+      <label>Deshabilitar marca</label>
+      <select name="cocheUno" id="cocheUno" onchange="desabilitar()">
+        <option value=""></option>
+        <option value="Ferrari">Ferrari</option>
 
-        <label >Deshabilitar marca</label>
-        <select name="cocheUno" id="cocheUno" onchange="desabilitar()">
-          
-            <option value=""></option>
-            <option value="Ferrari">Ferrari</option>
-        
-            <option value="Porsche">Porsche</option>
+        <option value="Porsche">Porsche</option>
 
-            <option value="Audi">Audi</option>
+        <option value="Audi">Audi</option>
 
-            <option value="Mercedes">Mercedes</option>
-        
-          </select>
-        <br>
-        <label >Escoge coche</label>
-        <select name="cocheDos">
-            <optgroup id="Ferrari" label="Ferrari">
-        
-              <option>458 Spider</option>
-        
-              <option>F12 Berlinetta</option>
-        
-              <option>California T</option>
-        
-            </optgroup>
-        
-            <optgroup id="Porsche" label="Porche">
-        
-              <option>Macan</option>
-        
-              <option>918 Spyder</option>
-        
-            </optgroup>
+        <option value="Mercedes">Mercedes</option>
+      </select>
+      <br />
+      <label>Escoge coche</label>
+      <select name="cocheDos">
+        <optgroup id="Ferrari" label="Ferrari">
+          <option>458 Spider</option>
 
-            <optgroup id="Audi" label="Audi">
-        
-              <option>R8</option>
-        
-              <option>RS5</option>
-        
-              <option>A5</option>
-        
-            </optgroup>
-        
-            <optgroup id="Mercedes" label="Mercedes">
-        
-              <option>Clase A</option>
-        
-              <option>Clase B</option>
+          <option>F12 Berlinetta</option>
 
-              <option>Clase C</option>
-        
-            </optgroup>
-        
-          </select>
-          <br>
-          <br>
-        
+          <option>California T</option>
+        </optgroup>
+
+        <optgroup id="Porsche" label="Porche">
+          <option>Macan</option>
+
+          <option>918 Spyder</option>
+        </optgroup>
+
+        <optgroup id="Audi" label="Audi">
+          <option>R8</option>
+
+          <option>RS5</option>
+
+          <option>A5</option>
+        </optgroup>
+
+        <optgroup id="Mercedes" label="Mercedes">
+          <option>Clase A</option>
+
+          <option>Clase B</option>
+
+          <option>Clase C</option>
+        </optgroup>
+      </select>
+      <br />
+      <br />
     </form>
-</body>
-    <script>
+  </body>
+  <script>
+    function desabilitar() {
+      marcas = ["Ferrari", "Porsche", "Audi", "Mercedes"];
 
-        function desabilitar() {
-          marcas=["Ferrari","Porsche","Audi","Mercedes"];
+      for (let i = 0; i < marcas.length; i++) {
+        document.getElementById(marcas[i]).disabled = false;
+      }
 
-          for (let i = 0; i < marcas.length; i++) {
-            document.getElementById(marcas[i]).disabled = false;
-          }
-          
-   
-          
-            IndiceMarcaCoche=document.formulario.cocheUno.selectedIndex;
-            MarcaCoche=document.formulario.cocheUno.options[IndiceMarcaCoche].value;
+      IndiceMarcaCoche = document.formulario.cocheUno.selectedIndex;
+      MarcaCoche = document.formulario.cocheUno.options[IndiceMarcaCoche].value;
 
-            document.getElementById(MarcaCoche).disabled = true;
-            
-        }
-
-    </script>
-
+      document.getElementById(MarcaCoche).disabled = true;
+    }
+  </script>
 </html>
