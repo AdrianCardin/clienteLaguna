@@ -1,95 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Unidad 5</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <form name="formulario" id="formulario">
-        <label>Fecha</label>
-        <input type="date" name="fecha">
-        <br>
-        <label>Rango</label>
-        <input type="range" id="rango">
-        <br>
-        <label>Telefono</label>
-        <input type="tel" id="telefono">
-        <br>
-        <label>Color</label>
-        <input type="color" id="color">
-        <br>
+      <label>Fecha</label>
+      <input type="date" name="fecha" id="fecha"/>
+      <br />
+      <label>Rango</label>
+      <input type="range" id="rango" />
+      <br />
+      <label>Telefono</label>
+      <input type="tel" id="telefono" />
+      <br />
+      <label>Color</label>
+      <input type="color" id="color" />
+      <br />
 
-        <label >Deshabilitar marca</label>
-        <select name="cocheUno" id="cocheUno">
-          
-            <option value=""></option>
-            <option value="Ferrari">Ferrari</option>
-        
-            <option value="Porsche">Porsche</option>
+      <label>Deshabilitar marca</label>
+      <select name="cocheUno" id="cocheUno">
+        <option value=""></option>
+        <option value="Ferrari">Ferrari</option>
 
-            <option value="Audi">Audi</option>
+        <option value="Porsche">Porsche</option>
 
-            <option value="Mercedes">Mercedes</option>
-        
-          </select>
-        <br>
-        <label >Escoge coche</label>
-        <select name="cocheDos">
-            <optgroup >
-        
-                <option></option>
-          
-              </optgroup>
-            <optgroup id="Ferrari" label="Ferrari">
-        
-              <option>458 Spider</option>
-        
-              <option>F12 Berlinetta</option>
-        
-              <option>California T</option>
-        
-            </optgroup>
-        
-            <optgroup id="Porsche" label="Porche">
-        
-              <option>Macan</option>
-        
-              <option>918 Spyder</option>
-        
-            </optgroup>
+        <option value="Audi">Audi</option>
 
-            <optgroup id="Audi" label="Audi">
-        
-              <option>R8</option>
-        
-              <option>RS5</option>
-        
-              <option>A5</option>
-        
-            </optgroup>
-        
-            <optgroup id="Mercedes" label="Mercedes">
-        
-              <option>Clase A</option>
-        
-              <option>Clase B</option>
+        <option value="Mercedes">Mercedes</option>
+      </select>
+      <br />
 
-              <option>Clase C</option>
-        
-            </optgroup>
-        
-          </select>
-          <br>
-          <br>
+      <label>Escoge coche</label>
+      <select name="cocheDos" id="cocheDos">
+        <optgroup>
+          <option></option>
+        </optgroup>
+        <optgroup id="Ferrari" label="Ferrari">
+          <option>458 Spider</option>
+
+          <option>F12 Berlinetta</option>
+
+          <option>California T</option>
+        </optgroup>
+
+        <optgroup id="Porsche" label="Porche">
+          <option>Macan</option>
+
+          <option>918 Spyder</option>
+        </optgroup>
+
+        <optgroup id="Audi" label="Audi">
+          <option>R8</option>
+
+          <option>RS5</option>
+
+          <option>A5</option>
+        </optgroup>
+
+        <optgroup id="Mercedes" label="Mercedes">
+          <option>Clase A</option>
+
+          <option>Clase B</option>
+
+          <option>Clase C</option>
+        </optgroup>
+      </select>
+      <br />
+      <br />
+
+      <input type="button" id="enviar" value="Enviar">
     </form>
-    <br>
-    <br>
+    <br />
+    <br />
     <p id="pintar">Aqui se pinta las respuestas</p>
     <script src="funciones.js"></script>
-</body>
-
+  </body>
 </html>
