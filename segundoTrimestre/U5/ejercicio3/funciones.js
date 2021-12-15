@@ -13,7 +13,7 @@ function desabilitar() {
 
 function pintarBlanco(arrayID) {
   for (let i = 0; i < arrayID.length; i++) {
-    document.getElementById(arrayId[i]).style.backgroundColor = "white";
+    document.getElementById(arrayID[i]).style.backgroundColor = "white";
   }
 }
 
