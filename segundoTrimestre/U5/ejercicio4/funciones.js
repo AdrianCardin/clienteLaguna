@@ -52,7 +52,6 @@ function validar(e) {
   document.getElementById("mensajeError").innerHTML = ""; // lo ponemos vacio
   borrarError();
   if (validaFecha() &&  validaTelefono() && validaCoche()  && confirm("Pulsa aceptar si deseas enviar el formulario")) {
-    console.log("entro"); 
     return true
   } else {
       e.preventDefault();

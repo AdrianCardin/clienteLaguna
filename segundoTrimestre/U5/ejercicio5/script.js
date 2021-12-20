@@ -37,10 +37,6 @@
         function deleteCookie(nombre){
             setCookie(nombre,"",0);
         }
-
-        function deleteAllCookies(){
-            setCookie(nombre,"",0);
-        }
         
         function setCookie(nombre, valor, expiracion){
             var d = new Date();
