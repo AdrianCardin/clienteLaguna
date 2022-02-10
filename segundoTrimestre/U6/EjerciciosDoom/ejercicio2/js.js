@@ -1,45 +1,46 @@
-window.onload=iniciar;
+window.onload = iniciar;
 
-function iniciar(){
-    crearParrafos.addEventListener("click",crearParrafo);
-    crearImagenes.addEventListener("click",crearImagen);
-    borrarUltimos.addEventListener("click",borrarUltimo);
-
-    borrarPrimeros.addEventListener("click",borrarPrimero);
-    sustituirPrimeroVacios.addEventListener("click",sustituirPrimeroVacio);
-    
+function iniciar() {
+  crearParrafos.addEventListener("click", crearParrafo);
+  crearImagenes.addEventListener("click", crearImagen);
+  borrarUltimos.addEventListener("click", borrarUltimo);
+  borrarPrimeros.addEventListener("click", borrarPrimero);
+  sustituirPrimeroVacios.addEventListener("click", sustituirPrimeroVacio);
 }
 
-function crearParrafo(){
-    debugger;
-    
-    var parrafo = document.createElement("p");
-    var txt = document.createTextNode(texto.value);
-    parrafo.appendChild(txt);
-    document.getElementById('myDiv').appendChild(parrafo);
-    document.getElementById('myDiv').className="miClase";
+function crearParrafo() {
+  var parrafo = document.createElement("p");
+  var txt = document.createTextNode(texto.value);
+  parrafo.appendChild(txt);
+  myDiv.appendChild(parrafo);
+  myDiv.className = "miClase";
 }
 
-function crearImagen(){
-    parrafo1.setAttribute("class","miClase");
-    document.getElementById("parrafo2").className="miClase";
+function crearImagen() {
+  var imagen = document.createElement("img");
+
+  var url = prompt("escribe el nombre del personaje de Star Wars");
+
+  while (url === "") {
+    var url = prompt("escribe el nombre del personaje de Star Wars");
+  }
+  imagen.setAttribute("class", "imagen miClase");
+  imagen.src = "/imagenes/" + url + ".png";
+  myDiv.appendChild(imagen);
 }
 
-function borrarUltimo(){
-    parrafo1.setAttribute("class","");
-    parrafo2.className="";
-    parrafo3.className="";
+function borrarUltimo() {
+  myDiv.removeChild(myDiv.lastChild);
 }
-function borrarPrimero(){
-    parrafo1.setAttribute("class","");
-    parrafo2.className="";
-    parrafo3.className="";
+function borrarPrimero() {
+    myDiv.removeChild(myDiv.firstChild);
 }
 
-function sustituirPrimeroVacio(){
-    parrafos=document.getElementsByTagName("p");
-    
-    for (let index = 0; index < parrafos.length; index++) {
-        parrafos[index].className="";
-    }
+function sustituirPrimeroVacio() {
+  parrafos = document.getElementsByTagName("p");
+  var txt = document.createTextNode(texto.value);
+  
+  for (let index = 0; index < parrafos.length; index++) {
+    parrafos[index].className = "";
+  }
 }
