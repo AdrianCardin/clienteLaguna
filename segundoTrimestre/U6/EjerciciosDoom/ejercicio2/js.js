@@ -37,10 +37,9 @@ function borrarPrimero() {
 }
 
 function sustituirPrimeroVacio() {
+  debugger;
   parrafos = document.getElementsByTagName("p");
-  var txt = document.createTextNode(texto.value);
-  
-  for (let index = 0; index < parrafos.length; index++) {
-    parrafos[index].className = "";
-  }
+  var txt = texto.value;
+  parrafos[0].innerHTML=txt;
+
 }
